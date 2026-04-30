@@ -1,5 +1,5 @@
 """
-cli_utils.py
+PrintUtils.py
 
 Utilities for CLI rendering using ANSI escape sequences.
 
@@ -11,7 +11,9 @@ This module provides:
 Compatibility:
 - Requires ANSI-compatible terminal (Linux, macOS, modern Windows)
 
-Author: Refactored
+Author: Robert Henning
+Licence : MIT
+Repos : https://github.com/AndrewReed-17/Python-s-Print-Utils
 """
 
 from __future__ import annotations
