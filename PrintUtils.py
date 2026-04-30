@@ -151,7 +151,7 @@ def progressbar(max_value: int, value: int, start_time: float) -> None:
 # Structured printing
 # ---------------------------------------------------------------------------
 
-def print_dict(data: Dict[Any, Any], index: int = -1, limit: int = 80) -> None:
+def print_dict(data: Dict[Any, Any], index = -1, limit: int = 80) -> None:
     """
     Pretty-print a dictionary or a sub-dictionary.
 
@@ -159,7 +159,7 @@ def print_dict(data: Dict[Any, Any], index: int = -1, limit: int = 80) -> None:
     ----------
     data : dict
         Dictionary to display.
-    index : int, optional
+    index : any, optional
         If not -1, attempts to access data[index].
     limit : int, optional
         Maximum line width before truncation.
