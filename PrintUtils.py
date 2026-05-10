@@ -14,7 +14,7 @@ Compatibility:
 
 Author: Robert Henning
 Licence : MIT, 2026
-Repos : https://github.com/AndrewReed-17/Python-s-Print-Utils
+Repos : https://github.com/AndrewReed-17/RHs_PyPrintUtils
 """
 
 from __future__ import annotations
