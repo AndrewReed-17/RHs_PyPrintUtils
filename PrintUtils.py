@@ -1,5 +1,5 @@
 """
-Robert Henning's, Python Print-Utils, 2026
+Robert Henning's, Python Print-Utils (R3), 2026
 PrintUtils.py
 
 Utilities for CLI rendering using ANSI escape sequences.
@@ -188,7 +188,7 @@ def print_dict(data: Dict[Any, Any], index = -1, limit: int = 80) -> None:
         print(line)
 
 
-def print_list(data: List[Any], index: int = -1) -> None:
+def print_list(data: List[Any], index: int = -1, limit: int = 80) -> None:
     """
     Pretty-print a list or a nested list.
 
@@ -198,9 +198,18 @@ def print_list(data: List[Any], index: int = -1) -> None:
         List to display.
     index : int, optional
         If not -1, prints data[index] assuming nested structure.
+    limit : int, optional
+        Maximum line width before truncation.
     """
 
     target = data if index == -1 else data[index]
 
     for element in target:
-        print(f"  - {element}")
+
+        line = "  - " + str(element)
+        
+        if len(line) > limit:
+            line = line[: limit - 3] + "..."
+            
+        print(line)
+
