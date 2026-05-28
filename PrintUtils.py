@@ -1,5 +1,5 @@
 """
-Robert Henning's, Python Print-Utils (R3), 2026
+Robert Henning's, Python Print-Utils (R4), 2026
 PrintUtils.py
 
 Utilities for CLI rendering using ANSI escape sequences.
@@ -212,4 +212,72 @@ def print_list(data: List[Any], index: int = -1, limit: int = 80) -> None:
             line = line[: limit - 3] + "..."
             
         print(line)
+
+# ---------------------------------------------------------------------------
+# Structured string
+# ---------------------------------------------------------------------------
+
+def string_dict(data: Dict[Any, Any], index = -1, limit: int = 80) -> str:
+    """
+    Pretty-print a dictionary or a sub-dictionary.
+
+    Parameters
+    ----------
+    data : dict
+        Dictionary to display.
+    index : any, optional
+        If not -1, attempts to access data[index].
+    limit : int, optional
+        Maximum line width before truncation.
+
+    Notes
+    -----
+    Empty values are replaced with '!ERR_NO_VALUE!'.
+    """
+    string = ""
+    
+    target = data if index == -1 else data.get(index, {})
+
+    processed = {
+        str(k): (v if str(v) else "!ERR_NO_VALUE!")
+        for k, v in target.items()
+    }
+
+    max_key_len = max((len(k) for k in processed), default=0)
+
+    for key, value in processed.items():
+        line = f"  - {key:<{max_key_len}} | {value}"
+
+        if len(line) > limit:
+            line = line[: limit - 3] + "..."
+
+        string = sting + line + "\n"
+    return string
+
+
+def print_list(data: List[Any], index: int = -1, limit: int = 80) -> str:
+    """
+    Pretty-print a list or a nested list.
+
+    Parameters
+    ----------
+    data : list
+        List to display.
+    index : int, optional
+        If not -1, prints data[index] assuming nested structure.
+    limit : int, optional
+        Maximum line width before truncation.
+    """
+
+    target = data if index == -1 else data[index]
+
+    for element in target:
+
+        line = "  - " + str(element)
+        
+        if len(line) > limit:
+            line = line[: limit - 3] + "..."
+            
+        string = sting + line + "\n"
+    return string
 
