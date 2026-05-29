@@ -251,7 +251,7 @@ def string_dict(data: Dict[Any, Any], index = -1, limit: int = 80) -> str:
         if len(line) > limit:
             line = line[: limit - 3] + "..."
 
-        string = sting + line + "\n"
+        string = string + line + "\n"
     return string
 
 
@@ -278,6 +278,6 @@ def print_list(data: List[Any], index: int = -1, limit: int = 80) -> str:
         if len(line) > limit:
             line = line[: limit - 3] + "..."
             
-        string = sting + line + "\n"
+        string = string + line + "\n"
     return string
 
