@@ -254,8 +254,7 @@ def string_dict(data: Dict[Any, Any], index = -1, limit: int = 80) -> str:
         string = string + line + "\n"
     return string
 
-
-def print_list(data: List[Any], index: int = -1, limit: int = 80) -> str:
+def string_list(data: List[Any], index: int = -1, limit: int = 80) -> str:
     """
     Pretty-print a list or a nested list.
 
@@ -268,6 +267,8 @@ def print_list(data: List[Any], index: int = -1, limit: int = 80) -> str:
     limit : int, optional
         Maximum line width before truncation.
     """
+
+    string = ""
 
     target = data if index == -1 else data[index]
 
