@@ -325,7 +325,7 @@ def menu_mk_i(
                 _cleanup_exit()
                 return "QUIT"
 
-           elif key == "UP":
+            elif key == "UP":
                 current_index -= 1
                 if current_index < 0:
                     current_index = int_count - 1
